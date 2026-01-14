@@ -1,8 +1,6 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Calendar, Clock, Mail } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { cn } from '../lib/utils';
-import { Spotlight } from '../components/ui/Spotlight';
 
 const Insights = () => {
     const posts = [
@@ -62,16 +60,26 @@ const Insights = () => {
         }
     ];
 
-    return (
-        <div className="pt-32 pb-24 min-h-screen bg-bg-base selection:bg-accent selection:text-white relative overflow-hidden">
-            <Spotlight className="-top-40 left-0 md:left-20 md:-top-20" fill="#06B6D4" />
+    const getTagColor = (tag) => {
+        switch (tag) {
+            case 'Market Trends': return 'bg-cyan-50 text-cyan-700 border-cyan-100';
+            case 'Talent': return 'bg-amber-50 text-amber-700 border-amber-100';
+            case 'Deep Tech': return 'bg-violet-50 text-violet-700 border-violet-100';
+            case 'Fundraising': return 'bg-emerald-50 text-emerald-700 border-emerald-100';
+            case 'Fintech': return 'bg-indigo-50 text-indigo-700 border-indigo-100';
+            case 'Growth': return 'bg-pink-50 text-pink-700 border-pink-100';
+            default: return 'bg-slate-50 text-slate-700 border-slate-100';
+        }
+    };
 
-            <div className="container-custom relative z-10">
+    return (
+        <div className="pt-32 pb-24 min-h-screen bg-white">
+            <div className="container-custom">
                 {/* Header */}
                 <div className="mb-24 max-w-4xl">
-                    <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 tracking-tighter">Insights</h1>
-                    <p className="text-xl md:text-2xl text-text-muted leading-relaxed font-light">
-                        Perspectives via <span className="text-white">deep dive</span> research on technology, markets, and the art of company building.
+                    <h1 className="text-5xl md:text-7xl font-bold text-slate-900 mb-8 tracking-tighter">Insights</h1>
+                    <p className="text-xl md:text-2xl text-slate-500 leading-relaxed font-light">
+                        Perspectives via <span className="text-gradient-indigo font-medium">deep dive</span> research on technology, markets, and the art of company building.
                     </p>
                 </div>
 
@@ -87,34 +95,35 @@ const Insights = () => {
                             className="group flex flex-col h-full"
                         >
                             <Link to="#" className="block h-full cursor-pointer">
-                                <div className="bg-slate-900 border border-white/10 rounded-3xl aspect-[16/10] mb-8 overflow-hidden relative group-hover:shadow-glow transition-all duration-500 shadow-none">
-                                    <div className="absolute inset-0 bg-slate-800" />
-                                    <img
-                                        src={post.image}
-                                        alt={post.title}
-                                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 saturate-0 group-hover:saturate-100 opacity-80 group-hover:opacity-100"
-                                    />
-                                    <span className="absolute top-6 left-6 bg-black/50 backdrop-blur-md px-4 py-2 rounded-full text-xs font-bold text-white uppercase tracking-wide border border-white/20">
-                                        {post.tag}
-                                    </span>
-                                </div>
-
-                                <div className="flex flex-col flex-grow px-2">
-                                    <div className="flex items-center gap-3 text-sm font-medium text-text-muted mb-4">
-                                        <span>{post.date}</span>
-                                        <span className="w-1 h-1 rounded-full bg-white/20" />
-                                        <span>{post.readTime}</span>
+                                <div className="card-premium p-0 h-full flex flex-col">
+                                    <div className="w-full aspect-[16/10] bg-gray-100 overflow-hidden relative border-b border-slate-100">
+                                        <img
+                                            src={post.image}
+                                            alt={post.title}
+                                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 saturate-0 group-hover:saturate-100 opacity-90 group-hover:opacity-100"
+                                        />
+                                        <span className={`absolute top-6 left-6 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wide border shadow-sm ${getTagColor(post.tag)}`}>
+                                            {post.tag}
+                                        </span>
                                     </div>
 
-                                    <h3 className="text-2xl font-bold text-white mb-4 leading-snug group-hover:text-accent-cyan transition-colors">
-                                        {post.title}
-                                    </h3>
-                                    <p className="text-text-muted line-clamp-3 mb-6 font-light leading-relaxed text-lg">
-                                        {post.excerpt}
-                                    </p>
+                                    <div className="p-8 flex flex-col flex-grow">
+                                        <div className="flex items-center gap-3 text-sm font-medium text-slate-400 mb-4">
+                                            <span>{post.date}</span>
+                                            <span className="w-1 h-1 rounded-full bg-slate-300" />
+                                            <span>{post.readTime}</span>
+                                        </div>
 
-                                    <div className="mt-auto flex items-center text-white font-bold text-base group-hover:text-accent-cyan transition-colors">
-                                        Read Article <ArrowRight size={18} className="ml-2 group-hover:translate-x-1 transition-transform" />
+                                        <h3 className="text-2xl font-bold text-slate-900 mb-4 leading-snug group-hover:text-indigo-600 transition-colors">
+                                            {post.title}
+                                        </h3>
+                                        <p className="text-slate-500 line-clamp-3 mb-6 font-light leading-relaxed text-lg">
+                                            {post.excerpt}
+                                        </p>
+
+                                        <div className="mt-auto flex items-center text-slate-900 font-bold text-base group-hover:text-indigo-600 transition-colors">
+                                            Read Article <ArrowRight size={18} className="ml-2 group-hover:translate-x-1 transition-transform" />
+                                        </div>
                                     </div>
                                 </div>
                             </Link>
@@ -123,20 +132,18 @@ const Insights = () => {
                 </div>
 
                 {/* Newsletter CTA */}
-                <div className="mt-40 pt-20 border-t border-white/5 text-center relative overflow-hidden rounded-3xl bg-gradient-to-b from-white/5 to-transparent p-12">
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[1px] bg-gradient-to-r from-transparent via-accent-cyan to-transparent opacity-50" />
-                    <h3 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">Stay updated</h3>
-                    <p className="text-text-muted mb-12 max-w-lg mx-auto text-lg font-light">
-                        We write about what we see. Join <span className="text-white font-medium">10k+ founders</span> receiving our insights.
+                <div className="mt-40 pt-20 border-t border-slate-100 text-center relative overflow-hidden rounded-3xl bg-slate-50 p-12">
+                    <h3 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">Stay updated</h3>
+                    <p className="text-slate-500 mb-12 max-w-lg mx-auto text-lg font-light">
+                        We write about what we see. Join <span className="text-slate-900 font-medium">10k+ founders</span> receiving our insights.
                     </p>
                     <div className="flex flex-col sm:flex-row justify-center items-center gap-4 max-w-md mx-auto relative group">
-                        <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-cyan-500 rounded-full blur opacity-25 group-hover:opacity-50 transition-opacity duration-700" />
                         <input
                             type="email"
                             placeholder="email@address.com"
-                            className="w-full px-6 py-4 rounded-full border border-white/10 bg-slate-950 focus:outline-none focus:border-accent-cyan text-white transition-all text-base placeholder:text-white/20 relative z-10"
+                            className="w-full px-6 py-4 rounded-full border border-slate-200 bg-white focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-slate-900 transition-all text-base placeholder:text-slate-400 shadow-sm"
                         />
-                        <button className="w-full sm:w-auto px-8 py-4 bg-white text-black font-bold text-base rounded-full hover:bg-indigo-50 transition-colors shadow-lg absolute right-1 top-1 bottom-1 sm:px-6 sm:py-0 z-20 hover:scale-105 active:scale-95 duration-200">
+                        <button className="w-full sm:w-auto px-8 py-4 bg-slate-900 text-white font-bold text-base rounded-full hover:bg-indigo-600 transition-colors shadow-md hover:shadow-lg active:scale-95 duration-200 hover:-translate-y-0.5">
                             Subscribe
                         </button>
                     </div>

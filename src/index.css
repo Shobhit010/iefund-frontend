@@ -1,86 +1,59 @@
 @import "tailwindcss";
 
 @theme {
-  /* Colors - Premium AI/SaaS Palette */
-  --color-primary: #FFFFFF;
-  /* White text for contrast */
-  --color-primary-light: #E2E8F0;
+  /* Colors - Premium White + Vibrant Accents */
+  --color-primary: #0F172A;
+  /* Slate 900 - Strong Text */
+  --color-primary-light: #334155;
+  /* Slate 700 - Secondary Text */
+
+  /* The Vibrant Accent Palette */
+  --color-accent-indigo: #4F46E5;
+  --color-accent-violet: #7C3AED;
+  --color-accent-cyan: #06B6D4;
+  --color-accent-emerald: #10B981;
+  --color-accent-amber: #F59E0B;
+
+  --color-bg-base: #FFFFFF;
+  /* Pure White Canvas */
+  --color-bg-subtle: #FAFAFA;
+  /* Very soft off-white for contrast */
+  --color-bg-card: #FFFFFF;
+
+  --color-text-main: #0F172A;
+  --color-text-muted: #64748B;
+  --color-text-light: #94A3B8;
+
+  --color-border-light: #F1F5F9;
+  /* Slate 100 - Barely visible structure */
+  --color-border-subtle: #E2E8F0;
   /* Slate 200 */
 
-  --color-accent: #6366F1;
-  /* Indigo 500 */
-  --color-accent-hover: #818CF8;
-  /* Indigo 400 */
-  --color-accent-cyan: #06B6D4;
-  /* Cyan 500 */
-  --color-accent-violet: #8B5CF6;
-  /* Violet 500 */
-
-  --color-bg-base: #020617;
-  /* Slate 950 - Deepest Blue/Black */
-  --color-bg-subtle: #0F172A;
-  /* Slate 900 */
-  --color-bg-card: #1E293B;
-  /* Slate 800 */
-
-  --color-text-main: #F8FAFC;
-  /* Slate 50 */
-  --color-text-muted: #94A3B8;
-  /* Slate 400 */
-  --color-text-light: #64748B;
-  /* Slate 500 */
-
-  --color-border-light: #1E293B;
-  /* Slate 800 */
-  --color-border-subtle: #334155;
-  /* Slate 700 */
-
-  /* Typography */
+  /* Typography - Modern & Confident */
   --font-display: "Inter", system-ui, sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
 
-  /* Shadows - Glows & Neon */
-  --shadow-card: 0 0 0 1px rgb(255 255 255 / 0.05), 0 4px 20px -2px rgb(0 0 0 / 0.5);
-  --shadow-card-hover: 0 0 0 1px rgb(99 102 241 / 0.3), 0 10px 40px -10px rgb(99 102 241 / 0.2);
-  --shadow-glow: 0 0 20px rgba(99, 102, 241, 0.5);
-  --shadow-neon: 0 0 10px rgba(6, 182, 212, 0.5), 0 0 20px rgba(139, 92, 246, 0.3);
+  /* Premium Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-card: 0 4px 6px -1px rgb(0 0 0 / 0.02), 0 2px 4px -2px rgb(0 0 0 / 0.02), 0 0 0 1px rgb(0 0 0 / 0.02);
+  --shadow-card-hover: 0 20px 25px -5px rgb(0 0 0 / 0.05), 0 8px 10px -6px rgb(0 0 0 / 0.01), 0 0 0 1px rgb(0 0 0 / 0.04);
+
+  /* Colored Glows for Hover States */
+  --shadow-glow-indigo: 0 0 20px rgba(79, 70, 229, 0.15);
+  --shadow-glow-cyan: 0 0 20px rgba(6, 182, 212, 0.15);
 
   /* Animations */
-  --animate-spotlight: spotlight 2s ease .75s 1 forwards;
-  --animate-shimmer: shimmer 2s linear infinite;
-  --animate-float: float 6s ease-in-out infinite;
+  --animate-fade-in-up: fade-in-up 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 
-  @keyframes spotlight {
+  @keyframes fade-in-up {
     0% {
       opacity: 0;
-      transform: translate(-72%, -62%) scale(0.5);
+      transform: translateY(20px);
     }
 
     100% {
       opacity: 1;
-      transform: translate(-50%, -40%) scale(1);
-    }
-  }
-
-  @keyframes shimmer {
-    from {
-      background-position: 0 0;
-    }
-
-    to {
-      background-position: -200% 0;
-    }
-  }
-
-  @keyframes float {
-
-    0%,
-    100% {
       transform: translateY(0);
-    }
-
-    50% {
-      transform: translateY(-20px);
     }
   }
 }
@@ -91,11 +64,11 @@
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    @apply bg-bg-base text-text-main;
+    @apply bg-white text-text-main;
   }
 
   body {
-    background: radial-gradient(circle at 50% -20%, #1e1b4b, #020617);
+    background: var(--color-bg-base);
     min-height: 100vh;
   }
 
@@ -106,15 +79,15 @@
   h5,
   h6 {
     font-family: var(--font-display);
-    @apply font-bold tracking-tight text-white;
+    @apply font-bold tracking-tight text-primary;
   }
 
   h1 {
-    @apply text-4xl md:text-5xl lg:text-7xl;
+    @apply text-4xl md:text-6xl lg:text-7xl;
   }
 
   h2 {
-    @apply text-3xl md:text-4xl lg:text-5xl;
+    @apply text-3xl md:text-5xl;
   }
 
   h3 {
@@ -128,22 +101,33 @@
   }
 
   .glass-header {
-    @apply backdrop-blur-xl bg-black/10 border-b border-white/5 sticky top-0 z-50 transition-all duration-300;
+    @apply backdrop-blur-md bg-white/90 border-b border-slate-100 sticky top-0 z-50 transition-all duration-300 supports-[backdrop-filter]:bg-white/80;
   }
 
-  .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-white via-indigo-200 to-indigo-400;
-  }
-
-  .text-gradient-premium {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-500 animate-pulse;
-  }
-
-  .bg-gradient-dark {
-    @apply bg-gradient-to-b from-slate-900 to-slate-950;
-  }
-
+  /* Premium White Card - The core building block */
   .card-premium {
-    @apply bg-slate-900/50 backdrop-blur-lg border border-white/10 rounded-2xl transition-all duration-300 hover:border-indigo-500/50 hover:shadow-card-hover;
+    @apply bg-white rounded-2xl border border-border-light shadow-card transition-all duration-500 hover:shadow-card-hover hover:-translate-y-1 relative overflow-hidden;
+  }
+
+  /* Text Gradients */
+  .text-gradient-subtle {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-600;
+  }
+
+  .text-gradient-indigo {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-violet-600;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    @apply bg-slate-900 text-white rounded-full px-8 py-3 font-semibold transition-all hover:bg-indigo-600 hover:shadow-glow-indigo active:scale-95 shadow-lg shadow-slate-900/10;
+  }
+
+  .btn-secondary {
+    @apply bg-white text-slate-900 border border-slate-200 rounded-full px-8 py-3 font-semibold transition-all hover:border-indigo-200 hover:text-indigo-600 hover:bg-indigo-50/30 active:scale-95;
+  }
+
+  .btn-accent {
+    @apply bg-indigo-600 text-white rounded-full px-8 py-3 font-semibold transition-all hover:bg-indigo-700 hover:shadow-glow-indigo active:scale-95;
   }
 }
