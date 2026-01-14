@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "Nebula",
+    "description": "Next-gen cloud infrastructure optimization for high-scale applications.",
+    "sector": "B2B SaaS",
+    "logo": "/images/logo-nebula.png",
+    "website": "#"
+  },
+  {
+    "id": 2,
+    "name": "FinPulse",
+    "description": "Embedded finance API for vertical SaaS platforms.",
+    "sector": "Fintech",
+    "logo": "../../assets/FinPulse.png",
+    "website": "#"
+  },
+  {
+    "id": 3,
+    "name": "Vitality",
+    "description": "Personalized preventative healthcare plans powered by genomic AI.",
+    "sector": "Healthcare",
+    "logo": "/images/logo-vitality.png",
+    "website": "#"
+  },
+  {
+    "id": 4,
+    "name": "Orbit",
+    "description": "Satellite imagery analytics for supply chain resilience.",
+    "sector": "Deep Tech",
+    "logo": "/images/logo-orbit.png",
+    "website": "#"
+  },
+  {
+    "id": 5,
+    "name": "FlowState",
+    "description": "Productivity workspace for creative teams.",
+    "sector": "Consumer",
+    "logo": "/images/logo-nebula.png",
+    "website": "#"
+  },
+  {
+    "id": 6,
+    "name": "Vertex",
+    "description": "Industrial robotics automation software.",
+    "sector": "AI / ML",
+    "logo": "/images/logo-cipher.png",
+    "website": "#"
+  },
+  {
+    "id": 7,
+    "name": "Lumina",
+    "description": "Sustainable energy grid management platform.",
+    "sector": "Climate Tech",
+    "logo": "/images/logo-vitality.png",
+    "website": "#"
+  },
+  {
+    "id": 8,
+    "name": "Cipher",
+    "description": "Post-quantum cryptography solutions for enterprise security.",
+    "sector": "Cybersecurity",
+    "logo": "/images/logo-cipher.png",
+    "website": "#"
+  },
+  {
+    "id": 9,
+    "name": "BaseCamp",
+    "description": "The operating system for outdoor adventure travel.",
+    "sector": "Consumer",
+    "logo": "/images/logo-finpulse.png",
+    "website": "#"
+  }
+]
