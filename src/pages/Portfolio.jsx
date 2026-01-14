@@ -34,6 +34,57 @@ const Portfolio = () => {
                     </p>
                 </div>
 
+                {/* Featured Investment Section */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8 }}
+                    className="mb-24"
+                >
+                    <div className="card-premium p-8 md:p-12 relative overflow-hidden group border-indigo-100/50">
+                        {/* Decorative background gradients */}
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-50/50 rounded-full blur-3xl -mr-32 -mt-32 opacity-50 group-hover:opacity-100 transition-opacity duration-700"></div>
+                        <div className="absolute bottom-0 left-0 w-64 h-64 bg-violet-50/50 rounded-full blur-3xl -ml-32 -mb-32 opacity-50 group-hover:opacity-100 transition-opacity duration-700"></div>
+
+                        <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
+                            <div className="text-center md:text-left w-full md:w-1/3">
+                                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 text-xs font-bold uppercase tracking-wider mb-6">
+                                    <span className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse"></span>
+                                    Featured Investment
+                                </div>
+                                <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-2 tracking-tight">IEfund</h2>
+                                <p className="text-xl text-slate-500 font-light">Led by <span className="text-indigo-600 font-medium">Kanchan Thakur</span></p>
+                            </div>
+
+                            <div className="w-full md:w-2/3">
+                                <div className="bg-white rounded-2xl border border-slate-100 shadow-sm p-6 md:p-10 flex flex-col md:flex-row items-center gap-8 group-hover:shadow-md transition-all duration-500 group-hover:border-indigo-100 relative overflow-hidden">
+                                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-indigo-50/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+
+                                    <div className="flex-1 text-center md:text-left relative z-10">
+                                        <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-2">Trigredge Solutions Pvt Ltd</h3>
+                                        <p className="text-slate-500 font-medium">Strategic Growth Partner</p>
+                                    </div>
+
+                                    <div className="hidden md:block h-16 w-px bg-slate-100"></div>
+                                    <div className="block md:hidden w-full h-px bg-slate-100"></div>
+
+                                    <div className="flex gap-8 md:gap-12 justify-center relative z-10">
+                                        <div className="text-center">
+                                            <div className="text-xs text-slate-400 uppercase tracking-wider font-bold mb-1">Investment</div>
+                                            <div className="text-2xl md:text-3xl font-bold text-emerald-600">₹50 Lakh</div>
+                                        </div>
+                                        <div className="text-center">
+                                            <div className="text-xs text-slate-400 uppercase tracking-wider font-bold mb-1">Equity</div>
+                                            <div className="text-2xl md:text-3xl font-bold text-indigo-600">25%</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </motion.div>
+
                 {/* Filters */}
                 <div className="flex justify-center flex-wrap gap-4 mb-20">
                     {sectors.map((sector) => (

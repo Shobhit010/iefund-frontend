@@ -50,8 +50,9 @@ const Footer = () => {
                             ))}
                         </div>
                         <p className="text-sm text-slate-500 leading-relaxed font-light">
-                            Based in Bangalore, India.<br />
-                            Investing Globally.
+                            Location:<br />
+                            F - 126, Katwaria Sarai,<br />
+                            110016, New Delhi, India
                         </p>
                     </div>
                 </div>

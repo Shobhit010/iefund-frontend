@@ -235,7 +235,7 @@ const Contact = () => {
             {/* Map Section */}
             <div className="w-full lg:w-1/2 h-[50vh] lg:h-auto bg-slate-50 relative border-t lg:border-t-0 lg:border-l border-slate-200">
                 <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248849.886539092!2d77.49085261456073!3d12.953997410046522!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670c9b44e6d%3A0xf8dfc3e8517e4fe0!2sBengaluru%2C%20Karnataka%2C%20India!5e0!3m2!1sen!2sus!4v1652876645851!5m2!1sen!2sus"
+                    src="https://maps.google.com/maps?q=F%20-%20126%2C%20Katwaria%20Sarai%2C%20110016%2C%20New%20Delhi%2C%20India&t=&z=15&ie=UTF8&iwloc=&output=embed"
                     width="100%"
                     height="100%"
                     style={{ border: 0, filter: 'grayscale(1)' }}
@@ -245,11 +245,10 @@ const Contact = () => {
                     className="w-full h-full object-cover opacity-80"
                 ></iframe>
                 <div className="absolute bottom-12 left-8 md:left-12 right-8 md:right-auto bg-white p-8 md:p-10 rounded-3xl shadow-xl max-w-sm border border-slate-100">
-                    <h4 className="font-bold text-slate-900 text-xl mb-4">IE Fund</h4>
+                    <h4 className="font-bold text-slate-900 text-xl mb-4">Location</h4>
                     <p className="text-slate-500 leading-relaxed mb-6 font-light">
-                        2nd Floor, Unitus Building<br />
-                        Koramangala, Bangalore<br />
-                        Karnataka 560034
+                        F - 126, Katwaria Sarai,<br />
+                        110016, New Delhi, India
                     </p>
                     <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-slate-900 font-bold text-sm hover:underline hover:text-indigo-600 transition-colors">
                         Get Directions <ChevronRight size={16} className="ml-1" />
