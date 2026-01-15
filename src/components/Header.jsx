@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { cn } from '../lib/utils';
+import logo from '../assets/IeFund.png';
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -37,8 +38,9 @@ const Header = () => {
         >
             <div className="container-custom flex justify-between items-center">
                 {/* Logo */}
-                <Link to="/" className="text-2xl font-display font-bold text-slate-900 tracking-tighter hover:text-indigo-600 transition-colors duration-300 relative group">
-                    IE Fund
+                <Link to="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity duration-300 relative group">
+                    <img src={logo} alt="IE Fund" className="h-10 w-auto object-contain" />
+                    <span className="text-xl font-display font-bold text-slate-900 tracking-tight">IE Fund</span>
                 </Link>
 
                 {/* Desktop Nav */}

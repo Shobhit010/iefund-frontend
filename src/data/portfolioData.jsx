@@ -1,3 +1,10 @@
+import logo from '../assets/IeFund.png';
+import skillinabox from '../assets/skillinabox.webp';
+import blup from '../assets/blup.webp';
+import prepbytes from '../assets/prepbytes.webp';
+import eventbeep from '../assets/eventbeep.webp';
+import extraaedge from '../assets/extraaedge.webp';
+
 const portfolioData = [
     {
         id: 1,
@@ -5,10 +12,10 @@ const portfolioData = [
         name: "Trigrexam",
         description: "AI-powered examination and assessment platform transforming how exams are created, conducted, and analyzed.",
         sector: "EdTech",
-        logo: null,
+        logo: logo,
         website: "#",
         title: "Kanchan Thakur’s IE Fund Invests ₹50 Lakh in AI EdTech Startup Trigrexam",
-        date: "Oct 20, 2025",
+        date: "Mar 20, 2019",
         readTime: "4 min read",
         content: (
             <>
@@ -33,7 +40,7 @@ const portfolioData = [
         name: "Skillinabox",
         description: "Skillinabox is a first-of-its-kind EdTech startup transforming STEM education by helping learners bring “Learning to Life” through IoT, Security, and Sustainability. The platform delivers customized DIY kits with raw materials, manuals, and video tutorials for hands-on learning across urban and rural India.",
         sector: "EdTech",
-        logo: null,
+        logo: skillinabox,
         website: "#"
     },
     {
@@ -42,7 +49,7 @@ const portfolioData = [
         name: "Blup",
         description: "Blup is a platform enabling developers, designers, and founders to build production-ready mobile apps with a 10X reduction in time, cost, and bandwidth.",
         sector: "DevTools",
-        logo: null,
+        logo: blup,
         website: "#"
     },
     {
@@ -51,7 +58,7 @@ const portfolioData = [
         name: "PrepBytes",
         description: "PrepBytes focuses on making college students placement-ready in IT/software roles by strengthening computer science fundamentals, coding, and problem-solving through mentorship-driven programs.",
         sector: "EdTech",
-        logo: null,
+        logo: prepbytes,
         website: "#"
     },
     {
@@ -60,7 +67,7 @@ const portfolioData = [
         name: "EventBeep",
         description: "EventBeep is a digital platform enabling college students to discover, attend, and engage with events and activities across campuses nationwide.",
         sector: "Social Platform",
-        logo: null,
+        logo: eventbeep,
         website: "#"
     },
     {
@@ -69,7 +76,7 @@ const portfolioData = [
         name: "ExtraaEdge",
         description: "ExtraaEdge is an admissions and marketing automation CRM for the education industry, helping institutions grow admissions efficiently by transforming counsellors into high-performing sales teams.",
         sector: "B2B SaaS",
-        logo: null,
+        logo: extraaedge,
         website: "#"
     }
 ];

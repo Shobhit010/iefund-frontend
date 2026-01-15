@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Mail } from 'lucide-react';
 import { cn } from '../lib/utils';
+import logo from '../assets/IeFund.png';
 
 const Footer = () => {
     return (
@@ -10,8 +11,8 @@ const Footer = () => {
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-16 mb-24">
                     {/* Brand */}
                     <div className="col-span-1 md:col-span-5">
-                        <Link to="/" className="text-3xl font-display font-bold text-slate-900 tracking-tighter block mb-8 hover:text-indigo-600 transition-colors duration-300">
-                            IE Fund
+                        <Link to="/" className="inline-block mb-8 hover:opacity-80 transition-opacity duration-300">
+                            <img src={logo} alt="IE Fund" className="h-10 w-auto object-contain" />
                         </Link>
                         <p className="text-slate-500 text-lg leading-relaxed max-w-sm font-light">
                             Patient capital for visionary founders. Backing the next generation of category-defining AI & Deep Tech companies.
