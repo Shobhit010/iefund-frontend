@@ -8,6 +8,8 @@ import Portfolio from './pages/Portfolio';
 import PortfolioArticle from './pages/PortfolioArticle';
 import Insights from './pages/Insights';
 import InsightArticle from './pages/InsightArticle';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfService from './pages/TermsOfService';
 import Contact from './pages/Contact';
 
 function App() {
@@ -23,6 +25,8 @@ function App() {
           <Route path="insights" element={<Insights />} />
           <Route path="insights/:slug" element={<InsightArticle />} />
           <Route path="contact-us" element={<Contact />} />
+          <Route path="privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="terms-of-service" element={<TermsOfService />} />
         </Route>
       </Routes>
     </Router>

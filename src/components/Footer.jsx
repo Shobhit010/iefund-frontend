@@ -40,13 +40,15 @@ const Footer = () => {
                     <div className="col-span-1 md:col-span-4">
                         <h4 className="font-bold text-slate-900 mb-8 tracking-wide uppercase text-sm opacity-80">Connect</h4>
                         <div className="flex space-x-6 mb-10">
-                            {[Mail].map((Icon, idx) => (
+                            {[
+                                { icon: Mail, href: "mailto:kanchan.thakur@iefund.in" }
+                            ].map((item, idx) => (
                                 <a
                                     key={idx}
-                                    href="#"
+                                    href={item.href}
                                     className="w-12 h-12 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-500 hover:text-indigo-600 hover:border-indigo-200 hover:shadow-md transition-all duration-300 group"
                                 >
-                                    <Icon size={20} className="group-hover:scale-110 transition-transform" />
+                                    <item.icon size={20} className="group-hover:scale-110 transition-transform" />
                                 </a>
                             ))}
                         </div>
@@ -61,8 +63,8 @@ const Footer = () => {
                 <div className="border-t border-slate-200 pt-10 flex flex-col md:flex-row justify-between items-center text-sm text-slate-500 font-medium">
                     <p>&copy; {new Date().getFullYear()} IE Fund. Institutional Excellence.</p>
                     <div className="flex space-x-8 mt-6 md:mt-0">
-                        <a href="#" className="hover:text-slate-900 transition-colors">Privacy Policy</a>
-                        <a href="#" className="hover:text-slate-900 transition-colors">Terms of Service</a>
+                        <Link to="/privacy-policy" className="hover:text-slate-900 transition-colors">Privacy Policy</Link>
+                        <Link to="/terms-of-service" className="hover:text-slate-900 transition-colors">Terms of Service</Link>
                     </div>
                 </div>
             </div>
