@@ -1,9 +1,9 @@
 import logo from '../assets/IeFund.png';
-import skillinabox from '../assets/skillinabox.webp';
-import blup from '../assets/blup.webp';
-import prepbytes from '../assets/prepbytes.webp';
-import eventbeep from '../assets/eventbeep.webp';
-import extraaedge from '../assets/extraaedge.webp';
+import skillinabox from '../assets/skillinabox.jpg';
+import blup from '../assets/blup.jpg';
+import prepbytes from '../assets/prepbytes.jpg';
+import eventbeep from '../assets/eventbeep.jpg';
+import extraaedge from '../assets/extraaedge.jpg';
 
 const portfolioData = [
     {
