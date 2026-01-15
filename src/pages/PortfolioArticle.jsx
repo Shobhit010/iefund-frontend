@@ -47,15 +47,6 @@ const PortfolioArticle = () => {
 
                 {/* Header */}
                 <div className="mb-12">
-                    {project.logo && (
-                        <div className="mb-8">
-                            <img
-                                src={project.logo}
-                                alt={`${project.name} Logo`}
-                                className="h-20 w-auto object-contain"
-                            />
-                        </div>
-                    )}
                     <div className="flex flex-wrap items-center gap-4 mb-6">
                         <span className={cn(
                             "px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide border bg-slate-50 text-slate-700 border-slate-100"
@@ -75,11 +66,27 @@ const PortfolioArticle = () => {
 
                     {/* Show Date/ReadTime if available (for Trigrexam article style) */}
                     {(project.date || project.readTime) && (
-                        <div className="flex items-center gap-6 text-slate-500 text-sm md:text-base border-b border-slate-100 pb-10">
+                        <div className="flex items-center gap-6 text-slate-500 text-sm md:text-base border-b border-slate-100 pb-10 mb-10">
                             {project.date && <div>{project.date}</div>}
                             {project.date && project.readTime && <div className="w-1 h-1 rounded-full bg-slate-300"></div>}
                             {project.readTime && <div>{project.readTime}</div>}
                         </div>
+                    )}
+
+                    {/* Banner Image */}
+                    {project.image && (
+                        <motion.div
+                            initial={{ scale: 0.95, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            transition={{ delay: 0.2, duration: 0.5 }}
+                            className="rounded-2xl overflow-hidden mb-12 border border-slate-100 shadow-sm"
+                        >
+                            <img
+                                src={project.image}
+                                alt={project.name}
+                                className="w-full h-auto object-cover max-h-[500px]"
+                            />
+                        </motion.div>
                     )}
                 </div>
 
