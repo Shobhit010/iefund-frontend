@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { cn } from '../lib/utils';
-import portfolioData from '../data/portfolio.js';
+import portfolioData from '../data/portfolioData';
 
 const Portfolio = () => {
     // Determine unique sectors from data for the filter
@@ -28,47 +29,15 @@ const Portfolio = () => {
         <div className="pt-32 pb-24 min-h-screen bg-white">
             <div className="container-custom">
                 {/* Header */}
-                <div className="mb-16 text-center max-w-4xl mx-auto">
+                <div className="mb-24 text-center max-w-4xl mx-auto">
                     <h1 className="text-5xl md:text-7xl font-bold text-slate-900 mb-8 tracking-tighter">Our Portfolio</h1>
                     <p className="text-xl md:text-2xl text-slate-500 font-light leading-relaxed">
                         Backing extraordinary founders building <span className="text-gradient-indigo font-medium">category-defining</span> companies.
                     </p>
                 </div>
 
-                {/* FEATURED INVESTMENT WRITE-UP (TEXT SECTION) */}
-                <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
-                    className="max-w-4xl mx-auto mb-20"
-                >
-                    <div className="mb-10 text-center md:text-left">
-                        <h2 className="text-2xl md:text-4xl font-bold text-slate-900 leading-tight mb-6">
-                            Kanchan Thakur’s IE Fund Invests ₹50 Lakh in AI EdTech Startup Trigrexam
-                        </h2>
-
-                        <div className="space-y-6 text-lg text-slate-600 leading-relaxed font-light">
-                            <p>
-                                In a significant development for India’s fast-growing edtech ecosystem, <strong className="font-medium text-slate-900">Kanchan Thakur</strong>, founder of IE Fund, has invested <strong className="font-medium text-slate-900">₹50 lakh</strong> in <strong className="font-medium text-slate-900">Trigrexam</strong> (Trigredge Solutions Pvt. Ltd.) through an equity funding round. The investment underscores growing investor confidence in technology-driven education platforms, particularly those leveraging artificial intelligence.
-                            </p>
-                            <p>
-                                Trigrexam, accessible through Trigrexam.com, is an AI-powered examination and assessment platform focused on transforming the education space. The startup aims to simplify and modernize the way exams are created, conducted, analyzed, and managed using advanced AI and data-driven insights. With this funding, Trigrexam plans to enhance its technology infrastructure, expand its product offerings, and strengthen its market presence across India.
-                            </p>
-                            <p>
-                                Founded by Manjeet Kumar Mehta and Dheeraj Kumar, alumni of IIT Roorkee, Trigrexam brings together strong academic and technical expertise. The founders envision Trigrexam as a one-stop solution for exams and assessments by 2030, serving schools, colleges, coaching institutes, corporates, and government organizations.
-                            </p>
-                            <p>
-                                IE Fund’s backing provides not only capital but also strategic guidance and industry connections to help the startup scale sustainably.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div className="w-full h-px bg-slate-200/60 rounded-full"></div>
-                </motion.div>
-
-                {/* Filters (Optional: Can keep or remove based on "No alterations to nav behavior". Keeping helps UX) */}
-                <div className="flex justify-center flex-wrap gap-4 mb-16">
+                {/* Filters */}
+                <div className="flex justify-center flex-wrap gap-4 mb-20">
                     {sectors.map((sector) => (
                         <button
                             key={sector}
@@ -85,7 +54,7 @@ const Portfolio = () => {
                     ))}
                 </div>
 
-                {/* NORMAL PORTFOLIO GRID */}
+                {/* PORTFOLIO GRID */}
                 <motion.div
                     layout
                     className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
@@ -101,35 +70,37 @@ const Portfolio = () => {
                                 key={project.id}
                                 className="h-full"
                             >
-                                <div className="bg-white rounded-2xl p-8 h-full border border-slate-200 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col">
-                                    <div className="flex justify-between items-start mb-6">
-                                        <div className="w-16 h-16 rounded-xl bg-slate-50 flex items-center justify-center border border-slate-100 overflow-hidden">
-                                            {project.logo ? (
-                                                <img src={project.logo} alt={project.name} className="w-full h-full object-contain p-2" />
-                                            ) : (
-                                                <div className="text-xl font-bold text-slate-400">{project.name[0]}</div>
-                                            )}
+                                <Link to={`/portfolio/${project.slug}`} className="block h-full cursor-pointer">
+                                    <div className="bg-white rounded-2xl p-8 h-full border border-slate-200 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col group">
+                                        <div className="flex justify-between items-start mb-6">
+                                            <div className="w-16 h-16 rounded-xl bg-slate-50 flex items-center justify-center border border-slate-100 overflow-hidden">
+                                                {project.logo ? (
+                                                    <img src={project.logo} alt={project.name} className="w-full h-full object-contain p-2" />
+                                                ) : (
+                                                    <div className="text-xl font-bold text-slate-400">{project.name[0]}</div>
+                                                )}
+                                            </div>
+                                            <ArrowUpRight className="text-slate-300 group-hover:text-indigo-600 transition-colors" size={20} />
                                         </div>
-                                        {/* Optional: External link icon can stay or go. Keeping for utility if data had links. */}
-                                    </div>
 
-                                    <div className="mb-3">
-                                        {/* Sector Badge */}
-                                        <span className={cn(
-                                            "inline-block px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider mb-3 border",
-                                            getSectorColor(project.sector)
-                                        )}>
-                                            {project.sector}
-                                        </span>
-                                        <h3 className="text-xl font-bold text-slate-900">
-                                            {project.name}
-                                        </h3>
-                                    </div>
+                                        <div className="mb-3">
+                                            {/* Sector Badge */}
+                                            <span className={cn(
+                                                "inline-block px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider mb-3 border",
+                                                getSectorColor(project.sector)
+                                            )}>
+                                                {project.sector}
+                                            </span>
+                                            <h3 className="text-xl font-bold text-slate-900 group-hover:text-indigo-600 transition-colors">
+                                                {project.name}
+                                            </h3>
+                                        </div>
 
-                                    <p className="text-slate-500 font-light leading-relaxed text-sm flex-grow">
-                                        {project.description}
-                                    </p>
-                                </div>
+                                        <p className="text-slate-500 font-light leading-relaxed text-sm flex-grow line-clamp-4">
+                                            {project.description}
+                                        </p>
+                                    </div>
+                                </Link>
                             </motion.div>
                         ))}
                     </AnimatePresence>
