@@ -47,6 +47,15 @@ const PortfolioArticle = () => {
 
                 {/* Header */}
                 <div className="mb-12">
+                    {project.logo && (
+                        <div className="mb-8">
+                            <img
+                                src={project.logo}
+                                alt={`${project.name} Logo`}
+                                className="h-20 w-auto object-contain"
+                            />
+                        </div>
+                    )}
                     <div className="flex flex-wrap items-center gap-4 mb-6">
                         <span className={cn(
                             "px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide border bg-slate-50 text-slate-700 border-slate-100"

@@ -12,7 +12,7 @@ const portfolioData = [
         name: "Trigrexam",
         description: "AI-powered examination and assessment platform transforming how exams are created, conducted, and analyzed.",
         sector: "EdTech",
-        logo: null,
+        logo: logo,
         website: "#",
         title: "Kanchan Thakur’s IE Fund Invests ₹50 Lakh in AI EdTech Startup Trigrexam",
         date: "Mar 20, 2019",
