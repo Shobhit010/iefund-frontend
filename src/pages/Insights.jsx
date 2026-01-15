@@ -2,63 +2,9 @@ import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+import insightsData from '../data/insightsData';
+
 const Insights = () => {
-    const posts = [
-        {
-            id: 1,
-            title: "Number Theory: The Future of Vertical SaaS",
-            excerpt: "Why verify niche markets are becoming the next big battleground for software innovation and how founders can capture value.",
-            date: "Oct 12, 2025",
-            readTime: "5 min read",
-            tag: "Market Trends",
-            image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800"
-        },
-        {
-            id: 2,
-            title: "Zero to One: Building Team Culture",
-            excerpt: "Lessons learned from hiring the first 10 employees at a high-growth startup. Culture isn't what you say, it's who you hire.",
-            date: "Sep 28, 2025",
-            readTime: "8 min read",
-            tag: "Talent",
-            image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800"
-        },
-        {
-            id: 3,
-            title: "The AI Infrastructure Layer Explained",
-            excerpt: "Understanding the evolving stack of artificial intelligence and where value accrues in the long term.",
-            date: "Sep 15, 2025",
-            readTime: "6 min read",
-            tag: "Deep Tech",
-            image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=800"
-        },
-        {
-            id: 4,
-            title: "Series A Readiness Guide",
-            excerpt: "What leading VCs actually look for in your Series A data room. Metrics that matter vs metrics that distract.",
-            date: "Aug 30, 2025",
-            readTime: "10 min read",
-            tag: "Fundraising",
-            image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80&w=800"
-        },
-        {
-            id: 5,
-            title: "The Fintech Reset: Unit Economics",
-            excerpt: "Moving from growth-at-all-costs to sustainable unit economics. A playbook for the next generation of fintech founders.",
-            date: "Aug 10, 2025",
-            readTime: "7 min read",
-            tag: "Fintech",
-            image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=800"
-        },
-        {
-            id: 6,
-            title: "Product Led Growth at Scale",
-            excerpt: "How to build a self-serve motion that actually scales enterprise sales. Unlocking the best of both worlds.",
-            date: "Jul 22, 2025",
-            readTime: "5 min read",
-            tag: "Growth",
-            image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800"
-        }
-    ];
 
     const getTagColor = (tag) => {
         switch (tag) {
@@ -85,7 +31,7 @@ const Insights = () => {
 
                 {/* Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-16">
-                    {posts.map((post, idx) => (
+                    {insightsData.map((post, idx) => (
                         <motion.div
                             key={post.id}
                             initial={{ opacity: 0, y: 30 }}
@@ -94,7 +40,7 @@ const Insights = () => {
                             transition={{ duration: 0.6, delay: idx * 0.1 }}
                             className="group flex flex-col h-full"
                         >
-                            <Link to="#" className="block h-full cursor-pointer">
+                            <Link to={`/insights/${post.slug}`} className="block h-full cursor-pointer">
                                 <div className="card-premium p-0 h-full flex flex-col">
                                     <div className="w-full aspect-[16/10] bg-gray-100 overflow-hidden relative border-b border-slate-100">
                                         <img

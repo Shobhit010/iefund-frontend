@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Linkedin, Twitter, Mail } from 'lucide-react';
+import { Mail } from 'lucide-react';
 import { cn } from '../lib/utils';
 
 const Footer = () => {
@@ -39,7 +39,7 @@ const Footer = () => {
                     <div className="col-span-1 md:col-span-4">
                         <h4 className="font-bold text-slate-900 mb-8 tracking-wide uppercase text-sm opacity-80">Connect</h4>
                         <div className="flex space-x-6 mb-10">
-                            {[Linkedin, Twitter, Mail].map((Icon, idx) => (
+                            {[Mail].map((Icon, idx) => (
                                 <a
                                     key={idx}
                                     href="#"
